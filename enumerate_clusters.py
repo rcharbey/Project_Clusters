@@ -14,7 +14,7 @@ sys.path.append('/home/algopolapp/Project_Clusters/Scripts/EGOPOL/Enumeration/')
 import enumerate_patterns
 
 def read_clustering(ego):
-    with open('../Data/Clusters_per_alters/%s.csv' % ego, 'r') as to_read:
+    with open('../Data/Clusters_per_ego/%s.csv' % ego, 'r') as to_read:
         csvr = csv.reader(to_read, delimiter = ';')
         entete = csvr.next()
         
@@ -28,7 +28,7 @@ def read_clustering(ego):
         
 
 def main():
-    for graph_name in os.listdir('../Data/Graphs/'):
+    for graph_name in os.listdir('../Data/Clusters_per_ego/'):
         ego = graph_name.split('.')[0]
         clusters = VertexClustering(read_clustering(ego))
         graph = Graph.Read_GML('../Data/Graphs/%s' % graph_name)  
