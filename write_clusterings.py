@@ -27,7 +27,7 @@ def main():
         
         for graph_name in os.listdir('../Data/Graphs'):
             ego = graph_name.split('.')[0]
-            graph = Graph.Read_GML('../Data/Graphs/%s.gml' % graph_name)
+            graph = Graph.Read_GML('../Data/Graphs/%s' % graph_name)
             
             clustering = compute_clustering(graph)
             
