@@ -13,6 +13,7 @@ def compute_clustering(graph):
     cluster_per_alter = {}
     for alter in graph.vs:
         cluster_per_alter[alter['name']] = alter['cluster']
+    return cluster_per_alter
         
 
 def main():
