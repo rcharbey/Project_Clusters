@@ -13,7 +13,7 @@ import sys
 
 here = '%s/Project_Clusters/Scripts'
 
-sys.path.append('%s/EGOPOL' % here)
+sys.path.append('%s/EGOPOL/Enumeration' % here)
 import enumerate
 
 def read_clutering(ego):
