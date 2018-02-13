@@ -45,7 +45,7 @@ def main():
                 
                 gcluster = graph.subgraph(cluster_ids)
         
-                pt, ps = enumerate_patterns.characterize_with_patterns(cluster, 5)
+                pt, ps = enumerate_patterns.characterize_with_patterns(gcluster, 5)
 
                 csvw.writerow([clusters.index(cluster)] + pt)
                 
