@@ -14,7 +14,7 @@ import sys
 here = '%s/Project_Clusters/Scripts'
 
 sys.path.append('%s/EGOPOL/Enumeration' % here)
-import enumerate
+import enumerate_patterns
 
 def read_clutering(ego):
     with open('../Data/Clusters_per_alters/%s.csv' % ego, 'r') as to_read:
@@ -44,7 +44,7 @@ def main():
             for cluster in clusters:
                 gcluster = graph.subgraph(cluster)
         
-                pt, ps = enumerate.characterize_with_patterns(cluster, 5)
+                pt, ps = enumerate_patterns.characterize_with_patterns(cluster, 5)
 
                 csvw.writerow([clusters.index(cluster)] + pt)
                 
