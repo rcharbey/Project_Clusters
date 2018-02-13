@@ -25,7 +25,7 @@ def read_clutering(ego):
         
 
 def main():
-    for graph_name in os.listdir('../Data/Graphs/):
+    for graph_name in os.listdir('../Data/Graphs/'):
         ego = graph_name.split('.')[0]
         clusters = VertexClustering(read_clustering(ego))
         graph = Graph.Read_GML('../Data/Graphs/%s' % graph_name)  
