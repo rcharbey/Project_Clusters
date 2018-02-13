@@ -10,16 +10,9 @@ import os
 import csv
 
 def compute_clustering(graph):
-    clusters_list = graph.community_multilevel()
-    _cc_list = graph.decompose()
     cluster_per_alter = {}
-    index = 0
-    print _cc_list
-    for sous_graphe in _cc_list:
-        for alter in sous_graphe.vs:
-            print alter
-            cluster_per_alter[alter] = index
-        index += 1
+    for alter in graph.vs:
+        cluster_per_alter[alter['name']] = alter['cluster']
         
 
 def main():
