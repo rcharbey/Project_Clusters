@@ -33,6 +33,8 @@ def main():
             
             for alter in clustering:
                 csv.writerow([ego, alter, clustering[alter]])
+    
+print __name__
                 
 if __name__ == '__main__':
     main()
