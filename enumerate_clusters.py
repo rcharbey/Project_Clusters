@@ -13,7 +13,7 @@ import sys
 sys.path.append('/home/algopolapp/Project_Clusters/Scripts/EGOPOL/Enumeration/')
 import enumerate_patterns
 
-def read_clutering(ego):
+def read_clustering(ego):
     with open('../Data/Clusters_per_alters/%s.csv' % ego, 'r') as to_read:
         csvr = csv.reader(to_read, delimiter = ';')
         entete = csvr.next()
