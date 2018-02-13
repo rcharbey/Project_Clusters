@@ -39,7 +39,7 @@ def main():
             
             clustering = compute_clustering(graph)
             
-            with open('../Data/clusters_per_alters/%s.csv' % ego, 'w') as to_write:
+            with open('../Data/Clusters_per_ego/%s.csv' % ego, 'w') as to_write:
                 csvw = csv.writer(to_write, delimiter = ';')
                 csvw.writerow(['alter', 'cluster' ])                  
         
