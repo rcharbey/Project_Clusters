@@ -23,7 +23,7 @@ def read_clustering(ego):
         for line in csvr:
             alter, cluster = line
             if not cluster in alters_per_cluster:
-                alter_per_cluster[cluster] = []
+                alters_per_cluster[cluster] = []
             alters_per_cluster[cluster].append(alter)
     
     return alters_per_cluster
