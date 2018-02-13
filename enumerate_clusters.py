@@ -11,7 +11,7 @@ import csv
 
 import sys
 sys.path.append('EGOPOL/')
-import enumerate
+import EGOPOL.enumerate
 
 def read_clutering(ego):
     with open('../Data/Clusters_per_alters/%s.csv' % ego, 'r') as to_read:
