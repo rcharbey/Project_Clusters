@@ -33,6 +33,7 @@ def main():
     for graph_name in os.listdir('../Data/Graphs/'):
         ego = graph_name.split('.')[0]
         clusters = read_clustering(ego)
+        print clusters
         graph = Graph.Read_GML('../Data/Graphs/%s' % graph_name)  
         print graph
         
