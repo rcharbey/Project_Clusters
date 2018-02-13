@@ -20,7 +20,9 @@ def compute_clustering(graph):
     cluster_per_alter = {}
     for alter in graph.vs:
         
-        if not alter['cluster']:
+        print alter.__getitem__('cluster', False)
+        
+        if not alter.__getitem__('cluster', False):
             cluster_per_alter = {}
             clusters_list = graph.community_multilevel()
             for cluster in clusters_list:
