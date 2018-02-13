@@ -36,7 +36,7 @@ def main():
         graph = Graph.Read_GML('../Data/Graphs/%s' % graph_name)  
         
         
-        with open('../Patterns_per_ego/%s.csv', 'w') as to_write:
+        with open('../Patterns_per_ego/%s.csv' % ego, 'w') as to_write:
             csvw = csv.writer(to_write, delimiter = ';')            
             csvw.writerow(['cluster'] + ['pattern %s' % i for i in range(1,31)])            
             
