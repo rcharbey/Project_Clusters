@@ -25,7 +25,7 @@ def compute_clustering(graph):
             clusters_list = graph.community_multilevel()
             for cluster in clusters_list:
                 for alter in graph.vs:
-                    cluster_per_alter[alter['name']] = alter.id
+                    cluster_per_alter[alter['name']] = alter['id']
             break
         cluster_per_alter[alter['name']] = alter['cluster']
     
