@@ -15,9 +15,10 @@ def compute_clustering(graph):
     cluster_per_alter = {}
     index = 0
     print _cc_list
-    for cc in _cc_list:
-        for alter in cc:
-            cluster_per_alter[cc] = index
+    for sous_graphe in _cc_list:
+        for alter in sous_graphe.vs:
+            print alter
+            cluster_per_alter[alter] = index
         index += 1
         
 
