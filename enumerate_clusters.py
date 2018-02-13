@@ -8,7 +8,10 @@ Created on Mon Feb 12 19:41:37 2018
 from igraph import *
 import os
 import csv
-from EGOPOL import enumerate
+
+import sys
+sys.path.insert('EGOPOL/')
+import enumerate
 
 def read_clutering(ego):
     with open('../Data/Clusters_per_alters/%s.csv' % ego, 'r') as to_read:
