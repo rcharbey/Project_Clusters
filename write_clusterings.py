@@ -27,7 +27,7 @@ def compute_clustering(graph):
                 for alter in graph.vs:
                     cluster_per_alter[alter['name']] = alter['id']
             break
-        cluster_per_alter[alter['name']] = alter['cluster']
+        cluster_per_alter[alter['name']] = str(int(alter['cluster']))
     
     return cluster_per_alter
         
