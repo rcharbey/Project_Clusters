@@ -11,7 +11,7 @@ import csv
 
 import sys
 
-here = '%s/Project_Clusters/Scripts
+here = '%s/Project_Clusters/Scripts'
 
 sys.path.append('%s/EGOPOL' % here)
 import enumerate
