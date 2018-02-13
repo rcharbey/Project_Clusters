@@ -41,7 +41,7 @@ def main():
             
             for cluster in clusters:
                 cluster_ids = [graph.vs[i] for i in range(len(graph.vs)) 
-                            if graph.vs[i]['name'] == [graph.vs[i]]]                
+                            if graph.vs[i]['name'] in cluster]                
                 
                 gcluster = graph.subgraph(cluster_ids)
         
