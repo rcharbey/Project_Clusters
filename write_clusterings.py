@@ -23,12 +23,9 @@ def compute_clustering(graph):
         if not alter['cluster']:
             cluster_per_alter = {}
             clusters_list = graph.community_multilevel()
-            print clusters_list.membership
-            index = 0
-            for cluster in cluster_list:
-                for alter in cluster:
-                    cluster_per_alter[alter] = index
-                    index += 1
+            for cluster in clusters_list:
+                for alter in graph.vs:
+                    cluster_per_alter[alter['name']] = alter.id
             break
         cluster_per_alter[alter['name']] = alter['cluster']
     
