@@ -18,19 +18,21 @@ def read_clustering(ego):
         csvr = csv.reader(to_read, delimiter = ';')
         entete = csvr.next()
         
-        cluster_per_alter = {}
+        alters_per_cluster = {}
         
         for line in csvr:
             alter, cluster = line
-            cluster_per_alter[alter] = cluster
+            if not cluster in alters_per_cluster:
+                alter_per_cluster[cluster] = []
+            alters_per_cluster[cluster].append(alter)
     
-    return cluster_per_alter
+    return alters_per_cluster
         
 
 def main():
     for graph_name in os.listdir('../Data/Clusters_per_ego/'):
         ego = graph_name.split('.')[0]
-        clusters = VertexClustering(read_clustering(ego))
+        clusters = read_clustering(ego)
         graph = Graph.Read_GML('../Data/Graphs/%s' % graph_name)  
         
         
