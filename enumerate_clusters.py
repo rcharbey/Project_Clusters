@@ -10,7 +10,7 @@ import os
 import csv
 
 import sys
-sys.path.insert('EGOPOL/')
+sys.path.append('EGOPOL/')
 import enumerate
 
 def read_clutering(ego):
