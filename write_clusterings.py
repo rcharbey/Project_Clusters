@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 """
+Created on Tue Feb 13 13:02:50 2018
+
+@author: raphael
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Created on Mon Feb 12 18:46:20 2018
 
 @author: raphael
@@ -12,8 +19,19 @@ import csv
 def compute_clustering(graph):
     cluster_per_alter = {}
     for alter in graph.vs:
-        print alter
+        
+        if not alter.get('cluster'):
+            cluster_per_alter = {}
+            clusters_list = graph.community_multilevel()
+            print clusters_lit.membership
+            index = 0
+            for cluster in cluster_list:
+                for alter in cluster:
+                    cluster_per_alter[alter] = index
+                    index += 1
+            break
         cluster_per_alter[alter['name']] = alter['cluster']
+    
     return cluster_per_alter
         
 
@@ -33,5 +51,3 @@ def main():
                 
 if __name__ == '__main__':
     main()
-        
-        
