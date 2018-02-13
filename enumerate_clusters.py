@@ -34,6 +34,7 @@ def main():
         ego = graph_name.split('.')[0]
         clusters = read_clustering(ego)
         graph = Graph.Read_GML('../Data/Graphs/%s' % graph_name)  
+        print graph
         
         
         with open('../Data/Patterns_per_ego/%s.csv' % ego, 'w') as to_write:
@@ -41,6 +42,7 @@ def main():
             csvw.writerow(['cluster'] + ['pattern %s' % i for i in range(1,31)])            
             
             for cluster in clusters:
+                print cluster
                 print [graph.vs[i] for i in cluster]
                 gcluster = graph.subgraph([graph.vs[i] for i in cluster])
         
