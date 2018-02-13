@@ -10,10 +10,7 @@ import os
 import csv
 
 import sys
-
-here = '%s/Project_Clusters/Scripts'
-
-sys.path.append('%s/EGOPOL/Enumeration' % here)
+sys.path.append('/home/algopolapp/Project_Clusters/Scripts/EGOPOL/Enumeration/')
 import enumerate_patterns
 
 def read_clutering(ego):
