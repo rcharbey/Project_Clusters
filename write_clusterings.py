@@ -14,6 +14,7 @@ def compute_clustering(graph):
     _cc_list = graph.decompose()
     cluster_per_alter = {}
     index = 0
+    print _cc_list
     for cc in _cc_list:
         for alter in cc:
             cluster_per_alter[cc] = index
