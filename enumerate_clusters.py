@@ -8,25 +8,41 @@ Created on Mon Feb 12 19:41:37 2018
 from igraph import *
 import os
 import csv
+from EGOPOL import enumerate
 
-def read_clutering():
-    with open('../Data/clusters_per_alters.csv', 'r') as to_read:
+def read_clutering(ego):
+    with open('../Data/Clusters_per_alters/%s.csv' % ego, 'r') as to_read:
         csvr = csv.reader(to_read, delimiter = ';')
         entete = csvr.next()
         
-        clusters_per_ego = {}
+        cluster_per_alter = {}
         
         for line in csvr:
-            ego, alter, cluster = line
-            if not ego in clusters_per_ego:
-                clusters_per_ego = {}
-            clusters_per_ego[ego][alter] = cluster
+            alter, cluster = line
+            cluster_per_alter[alter] = cluster
     
-    return clusters_per_ego
+    return cluster_per_alter
         
 
 def main():
-    read_clustering()
-    
+    for graph_name in os.listdir('../Data/Graphs/):
+        ego = graph_name.split('.')[0]
+        clusters = VertexClustering(read_clustering(ego))
+        graph = Graph.Read_GML('../Data/Graphs/%s' % graph_name)  
+        
+        
+        with open('../Patterns_per_ego/%s.csv', 'w') as to_write:
+            csvw = csv.writer(to_write, delimiter = ';')            
+            csvw.writerow(['cluster'] + ['pattern %s' % i for i in range(1,31)])            
+            
+            for cluster in clusters:
+                gcluster = graph.subgraph(cluster)
+        
+                pt, ps = enumerate.characterize_with_patterns(cluster, 5)
+
+                csvw.writerow([clusters.index(cluster)] + pt)
+                
+        
+        
 if __name__ == '__main__':
     main()
