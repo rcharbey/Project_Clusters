@@ -40,8 +40,8 @@ def main():
             csvw.writerow(['cluster'] + ['pattern %s' % i for i in range(1,31)])            
             
             for cluster in clusters:
-                cluster_ids = [graph.vs[i] for in range(len(graph.vs)) 
-                            if graph.vs[i]['name'] == [graph.vs[i] for i in cluster]]                
+                cluster_ids = [graph.vs[i] for i in range(len(graph.vs)) 
+                            if graph.vs[i]['name'] == [graph.vs[i]]]                
                 
                 gcluster = graph.subgraph(cluster_ids)
         
