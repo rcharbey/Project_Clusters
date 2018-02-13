@@ -9,7 +9,7 @@ from igraph import *
 import os
 import csv
 
-def compute_clutering(graph):
+def compute_clustering(graph):
     clusters_list = graph.community_multilevel()
     _cc_list = graph.decompose()
     cluster_per_alter = {}
