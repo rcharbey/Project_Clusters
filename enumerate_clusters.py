@@ -41,7 +41,7 @@ def main():
             csvw.writerow(['cluster'] + ['pattern %s' % i for i in range(1,31)])            
             
             for cluster in clusters:
-                gcluster = graph.subgraph(cluster)
+                gcluster = graph.subgraph([graph.vs[i] for i in cluster])
         
                 pt, ps = enumerate_patterns.characterize_with_patterns(cluster, 5)
 
