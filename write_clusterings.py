@@ -27,14 +27,12 @@ def main():
         
         for graph_name in os.listdir('../Data/Graphs'):
             ego = graph_name.split('.')[0]
-            graph = Graph.read_gml('../Data/Graphs/$s.gml' % graph_name)
+            graph = Graph.Read_GML('../Data/Graphs/$s.gml' % graph_name)
             
             clustering = compute_clustering(graph)
             
             for alter in clustering:
-                csv.writerow([ego, alter, clustering[alter]])
-    
-print __name__
+                csv.writerow([ego, alter, clustering[alter]]
                 
 if __name__ == '__main__':
     main()
