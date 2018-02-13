@@ -28,7 +28,7 @@ def main():
             clustering = compute_clustering(graph)
             
             for alter in clustering:
-                csv.writerow([ego, alter, clustering[alter]])
+                csvw.writerow([ego, alter, clustering[alter]])
                 
 if __name__ == '__main__':
     main()
