@@ -30,7 +30,7 @@ def read_clustering(ego):
         
 
 def main():
-    for graph_name in os.listdir('../Data/Clusters_per_ego/'):
+    for graph_name in os.listdir('../Data/Graphs/'):
         ego = graph_name.split('.')[0]
         clusters = read_clustering(ego)
         graph = Graph.Read_GML('../Data/Graphs/%s' % graph_name)  
