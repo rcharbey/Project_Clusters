@@ -41,13 +41,13 @@ def main():
             
             for cluster in clusters:
                 cluster_ids = [graph.vs[i] for i in range(len(graph.vs)) 
-                            if graph.vs[i]['name'] in cluster]                
+                            if graph.vs[i]['name'] in clusters[cluster]]      
                 
                 gcluster = graph.subgraph(cluster_ids)
         
                 pt, ps = enumerate_patterns.characterize_with_patterns(gcluster, 5)
 
-                csvw.writerow([clusters.index(cluster)] + pt)
+                csvw.writerow([cluster] + pt)
                 
         
         
