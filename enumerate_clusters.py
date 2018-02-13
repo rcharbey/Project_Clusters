@@ -10,8 +10,11 @@ import os
 import csv
 
 import sys
-sys.path.append('EGOPOL/')
-import EGOPOL.Enumeration.enumerate
+
+here = '%s/Project_Clusters/Scripts
+
+sys.path.append('%s/EGOPOL' % here)
+import enumerate
 
 def read_clutering(ego):
     with open('../Data/Clusters_per_alters/%s.csv' % ego, 'r') as to_read:
