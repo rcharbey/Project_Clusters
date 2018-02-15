@@ -74,6 +74,6 @@ if __name__ == '__main__':
         for line in csvr:
             list_egos.append((line[0], int(line[1])))
     
-    list_egos.sort(lambda x : x[1])
+    list_egos.sort(key = lambda x : x[1])
     
     main([ego[0] for ego in list_egos])
