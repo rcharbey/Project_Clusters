@@ -68,7 +68,7 @@ def main(list_egos):
         
 if __name__ == '__main__':
     
-    list_egos = {}
+    list_egos = []
     with open('../Data/size_per_ego.csv', 'r') as to_read:
         csvr = csv.reader(to_read, delimiter = ';')
         list_egos.append(line[0], int(line[1]))
