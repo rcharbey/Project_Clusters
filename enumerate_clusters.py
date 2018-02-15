@@ -70,6 +70,7 @@ if __name__ == '__main__':
     list_egos = []
     with open('../Data/size_per_ego.csv', 'r') as to_read:
         csvr = csv.reader(to_read, delimiter = ';')
+        csvr.next()
         for line in csvr:
             list_egos.append(line[0], int(line[1]))
     
