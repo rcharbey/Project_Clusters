@@ -72,7 +72,7 @@ if __name__ == '__main__':
         csvr = csv.reader(to_read, delimiter = ';')
         csvr.next()
         for line in csvr:
-            list_egos.append(line[0], int(line[1]))
+            list_egos.append((line[0], int(line[1])))
     
     list_egos.sort(lambda x : x[1])
     
