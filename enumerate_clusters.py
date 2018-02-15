@@ -37,8 +37,7 @@ def main(list_egos):
         if not graph_name in os.listdir('../Data/Graphs/'):
             continue
         clusters = read_clustering(ego)
-        graph = Graph.Read_GML('../Data/Graphs/%s' % graph_name)
-        
+        graph = Graph.Read_GML('../Data/Graphs/%s' % graph_name)    
         
         with open('../Data/Time_per_ego/%s.csv' % ego, 'w') as to_write:
             csvw = csv.writer(to_write, delimiter = ';')
@@ -71,8 +70,8 @@ if __name__ == '__main__':
     list_egos = []
     with open('../Data/size_per_ego.csv', 'r') as to_read:
         csvr = csv.reader(to_read, delimiter = ';')
-        list_egos.append(line[0], int(line[1]))
-        
+        for line in csvr:
+            list_egos.append(line[0], int(line[1]))
     
     list_egos.sort(lambda x : x[1])
     
