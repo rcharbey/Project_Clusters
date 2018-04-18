@@ -32,19 +32,20 @@ for ego in listdir('%s/data/three/' % home):
     print '%s/GALLERY/three/%s/Graphs/friends.gml' % (home, ego)
     graph = Graph.Read_GML('%s/GALLERY/three/%s/Graphs/friends.gml' % (home, ego))
     cluster_per_alter = {v['name'] : v['cluster'] for v in graph.vs}
-    print cluster_per_alter
     clusters_per_status = {}
     
     statuses = open_statuses(ego)
     for line in statuses:
         status = json.loads(line)
         commenters_for_this_status = []
+        if not 'comments' in status:
+            continue
         for comment in status.get('comments', []):
             commenter = comment['from']['id']
             if commenter == ego:
                 commenters_for_this_status.append('ego')
             else:
-                commenters_for_this_status.append(clusters_per_status.get(commenter, -1))
+                commenters_for_this_status.append(cluster_per_alter.get(commenter, -1))
         
         clusters_per_status[status['id']] = commenters_for_this_status
         
