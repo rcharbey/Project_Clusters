@@ -31,6 +31,8 @@ for ego in listdir('%s/data/three/' % home):
     
     print '%s/GALLERY/three/%s/Graphs/friends.gml' % (home, ego)
     graph = Graph.Read_GML('%s/GALLERY/three/%s/Graphs/friends.gml' % (home, ego))
+    if len(graph.vs) == 0:
+        continue
     if not 'name' in graph.vs[0].attribute_names():
         continue
     if not 'cluster' in graph.vs[0].attribute_names():
