@@ -29,7 +29,7 @@ for ego in listdir('%s/data/three/' % home):
     if ego[0] != 'a':
         continue
     
-    print ego
+    print '%s/GALLERY/three/%s/Graphs/friends.gml' % (home, ego)
     graph = Graph.Read_GraphML('%s/GALLERY/three/%s/Graphs/friends.gml' % (home, ego))
     cluster_per_alter = {v['name'] : v['cluster'] for v in graph.vs}
     clusters_per_status = {}
