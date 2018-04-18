@@ -38,7 +38,7 @@ for ego in listdir('%s/data/three/' % home):
     for line in statuses:
         status = json.loads(line)
         commenters_for_this_status = []
-        for comment in status['comments']:
+        for comment in status.get('comments', []):
             commenter = comment['from']['id']
             if commenter == ego:
                 commenters_for_this_status.append('ego')
