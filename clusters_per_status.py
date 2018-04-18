@@ -34,10 +34,9 @@ for ego in listdir('%s/data/three/' % home):
     cluster_per_alter = {v['name'] : v['cluster'] for v in graph.vs}
     clusters_per_status = {}
     
-    
     statuses = open_statuses(ego)
     for line in statuses:
-        status = json.load(line)
+        status = json.loads(line)
         commenters_for_this_status = []
         for comment in status['comments']:
             commenter = comment['from']['id']
