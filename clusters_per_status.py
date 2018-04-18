@@ -32,6 +32,7 @@ for ego in listdir('%s/data/three/' % home):
     print '%s/GALLERY/three/%s/Graphs/friends.gml' % (home, ego)
     graph = Graph.Read_GML('%s/GALLERY/three/%s/Graphs/friends.gml' % (home, ego))
     cluster_per_alter = {v['name'] : v['cluster'] for v in graph.vs}
+    print cluster_per_alter
     clusters_per_status = {}
     
     statuses = open_statuses(ego)
