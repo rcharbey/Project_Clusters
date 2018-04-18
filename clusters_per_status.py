@@ -6,8 +6,8 @@ Created on Wed Apr 18 16:27:06 2018
 @author: raphael
 """
 
-from os import listdir, isfile
-from os.path import expanduser
+from os import listdir
+from os.path import expanduser, isfile
 import gzip
 from igraph import Graph
 import json
