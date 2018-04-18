@@ -15,7 +15,7 @@ import csv
 
 home = expanduser('~')
 
-def open_statuses(ego, name):
+def open_statuses(ego):
     path = expanduser('~/data/three/%s/statuses.jsons' % ego)
 
     if isfile(path):
