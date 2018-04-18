@@ -51,4 +51,5 @@ for ego in listdir('%s/data/three/' % home):
         csvw = csv.writer(to_write, delimiter = ';')
         for status in clusters_per_status:
             csvw.writerow([status] + clusters_per_status[status])
-        
+   
+    break     
