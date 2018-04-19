@@ -40,7 +40,7 @@ for ego in listdir('%s/data/three/' % home):
     cluster_per_alter = {v['name'] : int(v['cluster']) for v in graph.vs}
     clusters_per_status = {}
     
-    nb_per_cluster = [0]*max([int(v['cluster']) for v in graph.vs]+1)
+    nb_per_cluster = [0]*(max([int(v['cluster']) for v in graph.vs])+1)
     for v in graph.vs:
         nb_per_cluster[int(v['cluster'])] += 1
     
