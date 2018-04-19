@@ -29,7 +29,7 @@ for ego in listdir('%s/data/three/' % home):
     if ego[0] != 'a':
         continue
     
-    print '%s/GALLERY/three/%s/Graphs/friends.gml' % (home, ego)
+    print ego
     graph = Graph.Read_GML('%s/GALLERY/three/%s/Graphs/friends.gml' % (home, ego))
     if len(graph.vs) == 0:
         continue
@@ -39,6 +39,11 @@ for ego in listdir('%s/data/three/' % home):
         continue
     cluster_per_alter = {v['name'] : int(v['cluster']) for v in graph.vs}
     clusters_per_status = {}
+    
+    nb_per_cluster = [0]*max([int(v['cluster']) for v in graph.vs])
+    for v in graph.vs:
+        nb_per_cluster[int(v['cluster'])] += 1
+    
     
     statuses = open_statuses(ego)
     for line in statuses:
@@ -57,5 +62,8 @@ for ego in listdir('%s/data/three/' % home):
         
     with open('%s/GALLERY_STATUSES/Clusters_per_status/%s.csv' % (home, ego), 'w') as to_write:
         csvw = csv.writer(to_write, delimiter = ';')
+        csvw.writerow(nb_per_cluster)
         for status in clusters_per_status:
             csvw.writerow([status] + clusters_per_status[status])
+            
+    break
